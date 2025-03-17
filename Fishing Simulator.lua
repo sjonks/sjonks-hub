@@ -14,3 +14,11 @@ Section1:Button({
         game:GetService("ReplicatedStorage"):WaitForChild("CloudFrameShared"):WaitForChild("DataStreams"):WaitForChild("processGameItemSold"):InvokeServer(unpack(args))
     end)
 
+Section1:Keybind({
+    Title = "Instant Catch",
+    Description = "When you are reeling a fish in, press the keybind to instantly catch",
+    Default = Enum.KeyCode.Q,
+    }, function(value)
+    game:GetService("ReplicatedStorage"):WaitForChild("CloudFrameShared"):WaitForChild("DataStreams"):WaitForChild("FishCaught"):FireServer()
+end)
+
